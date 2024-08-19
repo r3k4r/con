@@ -14,8 +14,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <Provider>
-            {/* <div className='main' />
-            <div className='gradient'/> */}
+            <div className='main' />
+            <div className='gradient'/>
               <Nav />
             {children}
             <section className='bg-ten sm:py-[16px] py-3'>
