@@ -1,16 +1,12 @@
 import { connectDB } from "@/app/util/db";
 import Course from "@/app/models/course";
 
-// Refactored fetching function
 export async function fetchComponentCourses() {
   try {
-    // Connect to the database
     await connectDB();
 
-    // Fetch the latest 6 courses, sorted by creation date
     const data = await Course.find().sort({ createdAt: -1 }).limit(6);
 
-    // Format the data (for example, if you want to add or modify fields)
     const latestCourses = data.map((course) => ({
       id: course._id.toString(),
       courseID: course.courseID,
@@ -26,7 +22,6 @@ export async function fetchComponentCourses() {
       image:course.image
     }));
 
-    // Return the formatted data as plain objects
     return latestCourses;
   } catch (err) {
     console.error("Database Error:", err);
