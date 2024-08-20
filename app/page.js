@@ -30,7 +30,7 @@ return (
 
 
       <section id='contact' name='contact' className='padding-x py-10'>
-           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1658.9667566357696!2d45.4199056161902!3d35.55922867795498!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40002fec64a29e93%3A0x2da69cbacc80fbc!2z2KrbldmE2KfYsduMINiz2KfZhNmF!5e0!3m2!1sen!2siq!4v1724056969764!5m2!1sen!2siq" width="100%" height="400" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>  
+           <iframe name='maps' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1658.9667566357696!2d45.4199056161902!3d35.55922867795498!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40002fec64a29e93%3A0x2da69cbacc80fbc!2z2KrbldmE2KfYsduMINiz2KfZhNmF!5e0!3m2!1sen!2siq!4v1724056969764!5m2!1sen!2siq" width="100%" height="400" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>  
       </section>
 
 
