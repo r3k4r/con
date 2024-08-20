@@ -60,6 +60,7 @@ const links = [
         smooth: 'easeInOutQuart',
       });
       setScrollTarget(null); // Reset scroll target after scrolling
+      setIsOpen(false)
     }
   }, [pathname, scrollTarget]);
 
@@ -83,6 +84,8 @@ const links = [
         delay: 0,
         smooth: 'easeInOutQuart',
       });
+      setIsOpen(false)
+
     }
   };
   
@@ -157,23 +160,22 @@ const links = [
          </div>
 
       { /* mobile navigation menu controlled by humbergur and closing icon */}
-      <div className={`lg:hidden fixed rounded-md top-24 right-0 h-[17rem] bg-ten font-freesans text-white w-screen transition-transform duration-500 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'} flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/60 bg-clip-padding backdrop-blur-sm backdrop-filter `}>
+      <div className={`lg:hidden fixed rounded-md top-24 left-0 h-[17rem] bg-ten font-freesans text-white w-screen transition-transform duration-500 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'} flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/60 bg-clip-padding backdrop-blur-sm backdrop-filter `}>
         {isOpen &&
           <nav className="lg:hidden flex flex-1 flex-shrink-0 items-center justify-center text-center">
             <ul className="flex flex-col gap-10 p-4">
               {links.map((link) => {
                 return (
                   <ReactLink
-                    onClick={handleOpen}
-                    to={link.href}
-                    smooth={true}
-                    duration={700}
-                    key={link.id}
-                    activeClass="active"
-                    className="text-black cursor-pointer hover:text-ten text-lg"
-                  >
-                    {link.name}
-                  </ReactLink>
+                  to={link.href}
+                  smooth={true}
+                  duration={700}
+                  key={link.id}
+                  activeClass='active'
+                  onClick={() => scrollToSection(link.href)}
+                  className={`text-black font-freesans ${i18n === 'en' || 'font-kurdish'} cursor-pointer hover:text-ten text-lg`}
+                >{link.name}
+                </ReactLink>
                 )
               })}
             </ul>
